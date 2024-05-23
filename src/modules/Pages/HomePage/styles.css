@@ -1,0 +1,40 @@
+.MoviesList {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-family: "Montserrat", "Helvetica", "Sans serif";
+}
+
+.movieIMG {
+  margin: 0;
+  padding: 0;
+}
+
+.movieDescription {
+  height: 116.5px;
+  margin-top: -4px;
+  padding: 16px 27px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #e2e2e2;
+}
+
+.movieDescription h2 {
+  margin: 0;
+  word-break: normal;
+  padding: 0;
+}
+
+.movie {
+  list-style: none;
+  width: 282px;
+  box-shadow: 5px 5px 10px;
+}
+
+.textMovies {
+  text-align: center;
+  font-family: "Montserrat", "Helvetica", "Sans serif";
+}

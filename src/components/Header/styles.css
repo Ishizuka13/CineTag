@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Header {
+  width: 100%;
+  height: 88px;
+  background-color: #000;
+}
+
+.HeaderNav {
+  margin: auto;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.HeaderNav img {
+  width: 169.5px;
+  height: 48px;
+}
+
+.Actions {
+  font-family: "Montserrat", "Helvetica", "Sans Serif";
+  color: #f0f0f0;
+  list-style: none;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+  gap: 19px;
+}
+
+.Banner img {
+  width: 100vw;
+}
