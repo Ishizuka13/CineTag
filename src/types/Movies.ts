@@ -3,4 +3,5 @@ export interface IMovie {
   titulo: string;
   capa: string;
   link: string;
+  favorite?: boolean;
 }

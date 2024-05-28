@@ -1,27 +1,25 @@
 import { useContext, useEffect, useState } from "react";
+import { MovieContext } from "../../../context/MoviesFavorite";
 import { IMovie } from "../../../types/Movies";
-import { getMovies } from "../../../server";
 import Favorite from "../../../assets/imagens/favorite.png";
 import NotFavorite from "../../../assets/imagens/favorite_outline.png";
 import "./styles.css";
-import { MovieContext } from "../../../context/MoviesFavorite";
 
-export const HomePage = () => {
+export const Favorites = () => {
   const { movies, setFavorite } = useContext(MovieContext);
+  const [moviesFavorite, setMoviesFavorite] = useState<IMovie[]>([]);
 
-  const handleFavorite = (movie: IMovie) => {
-    setFavorite(movie);
-  };
+  useEffect(
+    () => setMoviesFavorite(movies.filter((e) => e.favorite === true)),
+    [movies]
+  );
 
   return (
     <>
-      <h1 className="textMovies">
-        Um lugar para guardar seus vídeos e filmes!
-      </h1>
       <section className="Movies">
         <ul className="MoviesList">
-          {movies &&
-            movies.map((movie: IMovie) => (
+          {moviesFavorite &&
+            moviesFavorite.map((movie: IMovie) => (
               <li className="movie" key={movie.id}>
                 <a href={movie.link} target="/blank" className="movieIMG">
                   <img src={movie.capa} alt={movie.titulo} />
@@ -31,7 +29,7 @@ export const HomePage = () => {
                   <img
                     src={movie.favorite ? Favorite : NotFavorite}
                     alt=""
-                    onClick={() => handleFavorite(movie)}
+                    onClick={() => setFavorite(movie)}
                   />
                 </div>
               </li>

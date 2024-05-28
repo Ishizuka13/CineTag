@@ -3,6 +3,7 @@
 // import { getMovies } from "./server";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { MovieContextProvider } from "./context/MoviesFavorite";
 import { Router } from "./routes";
 
 export const App = () => {
@@ -15,7 +16,9 @@ export const App = () => {
   return (
     <>
       <Header />
-      <Router />
+      <MovieContextProvider>
+        <Router />
+      </MovieContextProvider>
       <Footer />
     </>
   );
